@@ -8,6 +8,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+TextEditingController prompt=TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,10 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   width: 15,
                 ),
-                const Expanded(
+                Expanded(
                   child: TextField(
-                    decoration: InputDecoration(
+                    controller: prompt,
+                    decoration: const InputDecoration(
                         hintText: "Write promt...",
+                        
                         hintStyle: TextStyle(color: Colors.black54),
                         border: InputBorder.none),
                   ),
